@@ -23,8 +23,8 @@ with open(election_data_path, newline = '') as csvfile:
     total_votes = len(candidate)
 
     candidate.sort()
-    candidate.append("@$*hiahaeosadsealah")# to find last candidate
-    
+    candidate.append("@*hiahaeosadsealah")# junk value to find last candidate, otherwise last candidate will not append to list
+    #Finds the number of votes per candidate, stores vote count and corresponding candidate in two lists with matching indices
     key = candidate[0]
     for i in range(len(candidate)):
         if candidate[i] != key:
@@ -32,6 +32,7 @@ with open(election_data_path, newline = '') as csvfile:
             index_offset = i
             unique_candidate.append(key)
             key = candidate[i]
+    candidate.pop(-1) #Remove junk value from candidate list
         
     #Sort vote count and corresponding candidate from highest to lowest
     max_candidate = unique_candidate[0]
