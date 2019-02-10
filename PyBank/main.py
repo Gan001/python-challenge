@@ -2,7 +2,7 @@ import os
 import csv
 
 budget_data_path = os.path.join('Resources', 'budget_data.csv')
-output_path = os.path.join('OutPut', 'Bank_Output.txt')
+output_path = os.path.join('Resources', 'Bank_Output.txt')
 output = open(output_path, 'w')
 
 #output_path = os.path.join('OutPut', 'Bank_Output.txt')
