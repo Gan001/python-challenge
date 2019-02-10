@@ -53,7 +53,7 @@ with open(election_data_path, newline = '') as csvfile:
     
     #Calculate percentage of votes
     for i in votes:
-       percent.append(round((i/total_votes)*100, 3))
+       percent.append((i/total_votes)*100)
     
     #Dispay data
     print("Election Results")
@@ -61,7 +61,7 @@ with open(election_data_path, newline = '') as csvfile:
     print(f"Total Votes: {total_votes}")
     print("-------------------------")
     for i in range(len(unique_candidate)):
-        print(f"{unique_candidate[i]}: {percent[i]}% ({votes[i]})")
+        print(f"{unique_candidate[i]}: {percent[i]:.3f}% ({votes[i]})")
     print("-------------------------")
     print(f"Winner: {winner}")
     print("-------------------------")
@@ -72,7 +72,7 @@ with open(election_data_path, newline = '') as csvfile:
     print(f"Total Votes: {total_votes}", file = output)
     print("-------------------------", file = output)
     for i in range(len(unique_candidate)):
-        print(f"{unique_candidate[i]}: {percent[i]}% ({votes[i]})", file = output)
+        print(f"{unique_candidate[i]}: {percent[i]:.3f}% ({votes[i]})", file = output)
     print("-------------------------", file = output)
     print(f"Winner: {winner}", file = output)
     print("-------------------------", file = output)
