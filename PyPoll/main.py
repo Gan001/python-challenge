@@ -2,7 +2,7 @@ import os
 import csv
 
 election_data_path = os.path.join('Resources', 'election_data.csv')
-output_path = os.path.join('OutPut', 'Election_Output.txt')
+output_path = os.path.join('Resources', 'Election_Output.txt')
 output = open(output_path, 'w')
 candidate = []
 unique_candidate = []
